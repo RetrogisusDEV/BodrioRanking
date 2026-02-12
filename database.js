@@ -6,7 +6,7 @@ const persons = {
         "realPerformanceMulti": 274,
         "teoricalPerformanceMulti": 283,
         "gpuName": "AMD R5 340X (OC)",
-        "vram": 2, // Dedicada
+        "vram": 2,
         "gpuPerformance": 1235,
         "gpuDXSupport": 11.1,
         "gpuOpenGLSupport": 4.6,
