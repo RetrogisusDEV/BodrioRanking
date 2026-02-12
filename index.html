@@ -1,1 +1,232 @@
 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Hardware Pro</title>
+    <style>
+        :root {
+            --primary: #0078D4;
+            --darker: #111111;
+            --surface: #2D2D30;
+            --border: #404040;
+            --gray: #A4A4A4;
+            --light: #FFFFFF;
+            --nvidia: #76B900;
+            --intel: #0071C5;
+            --amd: #ED1C24;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        
+        /* Estilos de Tabla */
+        .table-wrapper {
+            background: var(--surface);
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+        }
+        
+        th {
+            background: #252526;
+            padding: 15px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--gray);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        
+        /* Contenedor de Usuario y Medallas */
+        .user-cell {
+            font-size: 1.70rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .medal-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .sub-score {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: bold;
+            background: rgba(0, 120, 212, 0.1);
+            padding: 1px 4px;
+            border-radius: 3px;
+            margin-top: 3px;
+            display: inline-block;
+        }
+        
+        /* Diseño de Etiquetas de Texto */
+        .brand-label {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            min-width: 50px;
+        }
+        
+        .brand-label strong {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        .brand-label small {
+            font-size: 0.6rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+        
+        /* Colores Dinámicos */
+        .t-intel {
+            color: var(--intel);
+        }
+        
+        .t-amd {
+            color: var(--amd);
+        }
+        
+        .t-nvidia {
+            color: var(--nvidia);
+        }
+        
+        .t-oc {
+            color: #FFD700;
+        }
+        
+        .t-novram {
+            color: #888;
+            border-left: 1px solid #555;
+            padding-left: 10px;
+        }
+        
+        /* Utilidades */
+        .vram-tag {
+            font-size: 0.7rem;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+        
+        .score-cell {
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: right;
+        }
+        
+        .high {
+            color: #6CCB5F;
+        }
+        
+        .mid {
+            color: #F2C811;
+        }
+        
+        .low {
+            color: #E81123;
+        }
+        
+        .mobile-cards {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .desktop-only {
+                display: none;
+            }
+            
+            .mobile-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .card {
+                background: var(--surface);
+                padding: 15px;
+                border-left: 4px solid var(--primary);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Hardware Bodrios Ranking</h1>
+        </header>
+        
+        <div class="table-wrapper desktop-only">
+            <table>
+                <thead>
+                    <tr>
+                        <th onclick="sort('id')">ID</th>
+                        <th onclick="sort('name')">Usuario</th>
+                        <th onclick="sort('cpuVal')">CPU</th>
+                        <th onclick="sort('gpuPerformance')">GPU / VRAM</th>
+                        <th onclick="sort('ramSize')">RAM</th>
+                        <th onclick="sort('dateValue')">Fecha</th>
+                        <th onclick="sort('scoreFinal')" style="text-align:right">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+        <div id="mobileCards" class="mobile-cards"></div>
+    </div>
+    
+    <div style="padding: 30px" align="center">
+        <strong>Advertencia !</strong>
+        <div>Todas las puntuaciones se sacaron de <a href="https://videocardbenkmark.net">Videocardbenkmark.net</a> y de <a href="https://validate.x86.fr">CPUID</a></div>
+    </div>
+    <script src="js/database.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
