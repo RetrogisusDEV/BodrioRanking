@@ -20,9 +20,9 @@ const persons = {
     },
     2: {
         "name": "Salva",
-        "cpuName": "Intel Core i7 4790S",
-        "realPerformanceMono": 425,
-        "realPerformanceMulti": 1990,
+        "cpuName": "Intel Core i5 4760S",
+        "realPerformanceMono": 405
+        "realPerformanceMulti": 1510,
         "teoricalPerformanceMulti": 1600,
         "gpuName": "GTX 750Ti EVGA SuperClocked",
         "vram": 2, // Dedicada
