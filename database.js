@@ -3,9 +3,9 @@ const persons = {
         "name": "MAGALLANES",
         "cpuName": "AMD Athlon II X2 250",
         "realPerformanceMono": 142,
-        "realPerformanceMulti": 274,
+        "realPerformanceMulti": 286,
         "teoricalPerformanceMulti": 283,
-        "gpuName": "AMD R5 340X (OC)",
+        "gpuName": "AMD R5 340X",
         "vram": 2,
         "gpuPerformance": 1235,
         "gpuDXSupport": 11.1,
@@ -63,7 +63,7 @@ const persons = {
         "realPerformanceMulti": 4536,
         "teoricalPerformanceMulti": 6500,
         "gpuName": "AMD Radeon Graphics (Cezanne)",
-        "vram": 2, // Compartida (Asignable hasta 2GB usualmente)
+        "vram": 2, // Compartida
         "gpuPerformance": 2547,
         "gpuDXSupport": 12.0,
         "gpuOpenGLSupport": 4.6,
@@ -79,7 +79,7 @@ const persons = {
         "name": "Eduardo",
         "cpuName": "AMD Athlon II X2 245",
         "realPerformanceMono": 157,
-        "realPerformanceMulti": 286,
+        "realPerformanceMulti": 280,
         "teoricalPerformanceMulti": 265,
         "gpuName": "AMD R5 340X",
         "vram": 2, // Dedicada
